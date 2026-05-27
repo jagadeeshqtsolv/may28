@@ -1,8 +1,8 @@
 {
-  "id": "4d6dd1c3-9683-4ca0-a741-8682c61fe373",
+  "id": "70bd5248-42a4-492b-bd4c-e104a4abc525",
   "requirementId": "95189b32-dab8-4545-8dbf-ce2e26c011c0",
   "model": "gpt-4.1",
-  "createdAt": "2026-05-27T16:25:56.417Z",
+  "createdAt": "2026-05-27T17:06:36.845Z",
   "plan": {
     "version": 1,
     "suiteName": "sauce-demo-product-listing-smoke",
@@ -12,42 +12,38 @@
         "title": "Login and verify user is redirected to product listing page",
         "priority": "P0",
         "platforms": [
-          "chrome",
-          "firefox",
-          "safari",
-          "edge"
+          "chrome"
         ],
         "preconditions": [],
         "steps": [
           {
-            "id": "step-1",
+            "id": "step1",
             "action": "openUrl",
             "targetDescription": "Navigate to Sauce Demo login page",
-            "locatorHint": "https://www.saucedemo.com/",
             "value": "https://www.saucedemo.com/"
           },
           {
-            "id": "step-2",
+            "id": "step2",
             "action": "fill",
             "targetDescription": "Enter username",
             "locatorHint": "[data-test='username']",
             "value": "standard_user"
           },
           {
-            "id": "step-3",
+            "id": "step3",
             "action": "fill",
             "targetDescription": "Enter password",
             "locatorHint": "[data-test='password']",
             "value": "secret_sauce"
           },
           {
-            "id": "step-4",
+            "id": "step4",
             "action": "tap",
-            "targetDescription": "Click login button",
+            "targetDescription": "Click Login button",
             "locatorHint": "[data-test='login-button']"
           },
           {
-            "id": "step-5",
+            "id": "step5",
             "action": "assertVisible",
             "targetDescription": "Verify inventory page is displayed",
             "locatorHint": ".inventory_list"
@@ -59,64 +55,60 @@
         ]
       },
       {
-        "id": "view-product-details",
-        "title": "Verify all product details are visible on product listing page",
+        "id": "verify-product-listing-details",
+        "title": "Verify product listing displays name, price, description, and image",
         "priority": "P0",
         "platforms": [
-          "chrome",
-          "firefox",
-          "safari",
-          "edge"
+          "chrome"
         ],
         "preconditions": [],
         "steps": [
           {
-            "id": "step-1",
+            "id": "step1",
             "action": "openUrl",
             "targetDescription": "Navigate to Sauce Demo login page",
-            "locatorHint": "https://www.saucedemo.com/",
             "value": "https://www.saucedemo.com/"
           },
           {
-            "id": "step-2",
+            "id": "step2",
             "action": "fill",
             "targetDescription": "Enter username",
             "locatorHint": "[data-test='username']",
             "value": "standard_user"
           },
           {
-            "id": "step-3",
+            "id": "step3",
             "action": "fill",
             "targetDescription": "Enter password",
             "locatorHint": "[data-test='password']",
             "value": "secret_sauce"
           },
           {
-            "id": "step-4",
+            "id": "step4",
             "action": "tap",
-            "targetDescription": "Click login button",
+            "targetDescription": "Click Login button",
             "locatorHint": "[data-test='login-button']"
           },
           {
-            "id": "step-5",
+            "id": "step5",
             "action": "assertVisible",
             "targetDescription": "Verify product name is visible",
             "locatorHint": ".inventory_item_name"
           },
           {
-            "id": "step-6",
+            "id": "step6",
             "action": "assertVisible",
             "targetDescription": "Verify product price is visible",
             "locatorHint": ".inventory_item_price"
           },
           {
-            "id": "step-7",
+            "id": "step7",
             "action": "assertVisible",
             "targetDescription": "Verify product description is visible",
             "locatorHint": ".inventory_item_desc"
           },
           {
-            "id": "step-8",
+            "id": "step8",
             "action": "assertVisible",
             "targetDescription": "Verify product image is visible",
             "locatorHint": ".inventory_item_img"
@@ -129,55 +121,51 @@
       },
       {
         "id": "sort-products-low-to-high",
-        "title": "Sort products by Price (Low to High) and verify sorting",
+        "title": "Sort products by Price (Low to High) and verify order",
         "priority": "P0",
         "platforms": [
-          "chrome",
-          "firefox",
-          "safari",
-          "edge"
+          "chrome"
         ],
         "preconditions": [],
         "steps": [
           {
-            "id": "step-1",
+            "id": "step1",
             "action": "openUrl",
             "targetDescription": "Navigate to Sauce Demo login page",
-            "locatorHint": "https://www.saucedemo.com/",
             "value": "https://www.saucedemo.com/"
           },
           {
-            "id": "step-2",
+            "id": "step2",
             "action": "fill",
             "targetDescription": "Enter username",
             "locatorHint": "[data-test='username']",
             "value": "standard_user"
           },
           {
-            "id": "step-3",
+            "id": "step3",
             "action": "fill",
             "targetDescription": "Enter password",
             "locatorHint": "[data-test='password']",
             "value": "secret_sauce"
           },
           {
-            "id": "step-4",
+            "id": "step4",
             "action": "tap",
-            "targetDescription": "Click login button",
+            "targetDescription": "Click Login button",
             "locatorHint": "[data-test='login-button']"
           },
           {
-            "id": "step-5",
+            "id": "step5",
             "action": "selectOption",
             "targetDescription": "Select 'Price (low to high)' from sort dropdown",
             "locatorHint": "[data-test='product_sort_container']",
             "value": "lohi"
           },
           {
-            "id": "step-6",
+            "id": "step6",
             "action": "assertText",
             "targetDescription": "Verify first product is lowest price",
-            "locatorHint": ".inventory_item_price:first-child",
+            "locatorHint": ".inventory_item_price:nth-child(1)",
             "assertion": "$7.99"
           }
         ],
@@ -191,48 +179,44 @@
         "title": "Add product to cart and verify cart icon updates",
         "priority": "P0",
         "platforms": [
-          "chrome",
-          "firefox",
-          "safari",
-          "edge"
+          "chrome"
         ],
         "preconditions": [],
         "steps": [
           {
-            "id": "step-1",
+            "id": "step1",
             "action": "openUrl",
             "targetDescription": "Navigate to Sauce Demo login page",
-            "locatorHint": "https://www.saucedemo.com/",
             "value": "https://www.saucedemo.com/"
           },
           {
-            "id": "step-2",
+            "id": "step2",
             "action": "fill",
             "targetDescription": "Enter username",
             "locatorHint": "[data-test='username']",
             "value": "standard_user"
           },
           {
-            "id": "step-3",
+            "id": "step3",
             "action": "fill",
             "targetDescription": "Enter password",
             "locatorHint": "[data-test='password']",
             "value": "secret_sauce"
           },
           {
-            "id": "step-4",
+            "id": "step4",
             "action": "tap",
-            "targetDescription": "Click login button",
+            "targetDescription": "Click Login button",
             "locatorHint": "[data-test='login-button']"
           },
           {
-            "id": "step-5",
+            "id": "step5",
             "action": "tap",
-            "targetDescription": "Click 'Add to cart' for Sauce Labs Backpack",
+            "targetDescription": "Click Add to Cart for Sauce Labs Backpack",
             "locatorHint": "[data-test='add-to-cart-sauce-labs-backpack']"
           },
           {
-            "id": "step-6",
+            "id": "step6",
             "action": "assertText",
             "targetDescription": "Verify cart icon shows 1 item",
             "locatorHint": ".shopping_cart_badge",
@@ -245,66 +229,63 @@
         ]
       },
       {
-        "id": "navigate-product-detail-and-back",
-        "title": "Navigate to product detail page and back to product listing",
+        "id": "product-detail-navigation",
+        "title": "Navigate to product detail and back to product listing",
         "priority": "P0",
         "platforms": [
-          "chrome",
-          "firefox",
-          "safari",
-          "edge"
+          "chrome"
         ],
         "preconditions": [],
         "steps": [
           {
-            "id": "step-1",
+            "id": "step1",
             "action": "openUrl",
             "targetDescription": "Navigate to Sauce Demo login page",
-            "locatorHint": "https://www.saucedemo.com/",
             "value": "https://www.saucedemo.com/"
           },
           {
-            "id": "step-2",
+            "id": "step2",
             "action": "fill",
             "targetDescription": "Enter username",
             "locatorHint": "[data-test='username']",
             "value": "standard_user"
           },
           {
-            "id": "step-3",
+            "id": "step3",
             "action": "fill",
             "targetDescription": "Enter password",
             "locatorHint": "[data-test='password']",
             "value": "secret_sauce"
           },
           {
-            "id": "step-4",
+            "id": "step4",
             "action": "tap",
-            "targetDescription": "Click login button",
+            "targetDescription": "Click Login button",
             "locatorHint": "[data-test='login-button']"
           },
           {
-            "id": "step-5",
+            "id": "step5",
             "action": "tap",
             "targetDescription": "Click on Sauce Labs Backpack product name",
-            "locatorHint": "[data-test='item-name-sauce-labs-backpack']"
+            "locatorHint": ".inventory_item_name",
+            "value": "Sauce Labs Backpack"
           },
           {
-            "id": "step-6",
+            "id": "step6",
             "action": "assertVisible",
             "targetDescription": "Verify product detail page is displayed",
-            "locatorHint": ".inventory_details"
+            "locatorHint": ".inventory_details_desc"
           },
           {
-            "id": "step-7",
+            "id": "step7",
             "action": "tap",
-            "targetDescription": "Click back to products button",
+            "targetDescription": "Click Back to Products button",
             "locatorHint": "[data-test='back-to-products']"
           },
           {
-            "id": "step-8",
+            "id": "step8",
             "action": "assertVisible",
-            "targetDescription": "Verify inventory page is displayed again",
+            "targetDescription": "Verify inventory page is displayed",
             "locatorHint": ".inventory_list"
           }
         ],

@@ -1,67 +1,63 @@
 {
-  "id": "view-product-details",
-  "testPlanId": "4d6dd1c3-9683-4ca0-a741-8682c61fe373",
+  "id": "verify-product-listing-details",
+  "testPlanId": "70bd5248-42a4-492b-bd4c-e104a4abc525",
   "requirementId": "95189b32-dab8-4545-8dbf-ce2e26c011c0",
   "suiteName": "sauce-demo-product-listing-smoke",
   "case": {
-    "id": "view-product-details",
-    "title": "Verify all product details are visible on product listing page",
+    "id": "verify-product-listing-details",
+    "title": "Verify product listing displays name, price, description, and image",
     "priority": "P0",
     "platforms": [
-      "chrome",
-      "firefox",
-      "safari",
-      "edge"
+      "chrome"
     ],
     "preconditions": [],
     "steps": [
       {
-        "id": "step-1",
+        "id": "step1",
         "action": "openUrl",
         "targetDescription": "Navigate to Sauce Demo login page",
-        "locatorHint": "https://www.saucedemo.com/",
         "value": "https://www.saucedemo.com/"
       },
       {
-        "id": "step-2",
+        "id": "step2",
         "action": "fill",
         "targetDescription": "Enter username",
         "locatorHint": "[data-test='username']",
         "value": "standard_user"
       },
       {
-        "id": "step-3",
+        "id": "step3",
         "action": "fill",
         "targetDescription": "Enter password",
         "locatorHint": "[data-test='password']",
         "value": "secret_sauce"
       },
       {
-        "id": "step-4",
+        "id": "step4",
         "action": "tap",
-        "targetDescription": "Click login button",
+        "targetDescription": "Click Login button",
         "locatorHint": "[data-test='login-button']"
       },
       {
-        "id": "step-5",
+        "id": "step5",
         "action": "assertVisible",
         "targetDescription": "Verify product name is visible",
         "locatorHint": ".inventory_item_name"
       },
       {
-        "id": "step-6",
+        "id": "step6",
         "action": "assertVisible",
         "targetDescription": "Verify product price is visible",
         "locatorHint": ".inventory_item_price"
       },
       {
-        "id": "step-7",
+        "id": "step7",
         "action": "assertVisible",
         "targetDescription": "Verify product description is visible",
         "locatorHint": ".inventory_item_desc"
       },
       {
-        "id": "step-8",
+        "id": "step8",
         "action": "assertVisible",
         "targetDescription": "Verify product image is visible",
         "locatorHint": ".inventory_item_img"
