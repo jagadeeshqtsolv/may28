@@ -63,11 +63,11 @@ test('Sort products by Price (Low to High) and verify order', { tag: ["@smoke","
     await productListPage.selectNameAToZ2('lohi');
   });
   await test.step('Assert text — Verify first product is lowest price', async () => {
-    await productListPage.expectAddToCartSauceLabsBackpackText('$7.99');
+    await sortingPage.expectAddToCartSauceLabsOnesieText('$7.99');
   });
 });
 
-test('Add product to cart and verify cart icon updates', { tag: ["@smoke","@regression","@P0","@add-to-cart-and-verify-cart-count"] }, async ({ page, loginPage, productListPage }) => {
+test('Add product to cart and verify cart icon updates', { tag: ["@smoke","@regression","@P0","@add-to-cart-and-verify-cart-count"] }, async ({ page, loginPage, productListPage, cartPage }) => {
   await test.step('Open — Navigate to Sauce Demo login page', async () => {
     await page.goto('/');
   });
@@ -84,7 +84,7 @@ test('Add product to cart and verify cart icon updates', { tag: ["@smoke","@regr
     await productListPage.clickAddToCartSauceLabsBackpack();
   });
   await test.step('Assert text — Verify cart icon shows 1 item', async () => {
-    await productListPage.expectProductsText('1');
+    await cartPage.expectYourCartText('1');
   });
 });
 
