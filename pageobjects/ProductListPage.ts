@@ -68,7 +68,7 @@ export class ProductListPage {
     linkedIn: { strategy: 'role' as const, value: 'LinkedIn', role: 'link', actionKind: 'link' as const },
   } as const;
 
-  constructor(private readonly page: Page) {}
+  constructor(private readonly page: Page) { }
 
   async clickOpenMenu(): Promise<void> {
     await clickWhenVisible(webLocator(this.page, ProductListPage.L.openMenu));
@@ -154,8 +154,8 @@ export class ProductListPage {
     await scrollIntoViewWhenVisible(webLocator(this.page, ProductListPage.L.nameAToZ));
   }
 
-  async selectNameAToZ2(value: string): Promise<void> {
-    await selectOptionWhenVisible(webLocator(this.page, ProductListPage.L.nameAToZ2), value);
+  async selectNameAToZ(value: string): Promise<void> {
+    await selectOptionWhenVisible(webLocator(this.page, ProductListPage.L.nameAToZ), value);
   }
 
   async expectNameAToZ2Visible(timeoutMs = 30_000): Promise<void> {

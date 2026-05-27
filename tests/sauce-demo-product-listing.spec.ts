@@ -1,7 +1,7 @@
 import { test, expect } from '../support/fixtures';
 import testData from '../testdata/test-data.json';
 
-test('Login and verify user is redirected to product listing page', { tag: ["@smoke","@regression","@P0","@login-and-view-product-list"] }, async ({ page, loginPage, productListPage }) => {
+test('Login and verify user is redirected to product listing page', { tag: ["@smoke", "@regression", "@P0", "@login-and-view-product-list"] }, async ({ page, loginPage, productListPage }) => {
   await test.step('Open — Navigate to Sauce Demo login page', async () => {
     await page.goto('/');
   });
@@ -19,7 +19,7 @@ test('Login and verify user is redirected to product listing page', { tag: ["@sm
   });
 });
 
-test('Verify product listing displays name, price, description, and image', { tag: ["@smoke","@regression","@P0","@verify-product-listing-details"] }, async ({ page, loginPage, productListPage }) => {
+test('Verify product listing displays name, price, description, and image', { tag: ["@smoke", "@regression", "@P0", "@verify-product-listing-details"] }, async ({ page, loginPage, productListPage }) => {
   await test.step('Open — Navigate to Sauce Demo login page', async () => {
     await page.goto('/');
   });
@@ -46,7 +46,7 @@ test('Verify product listing displays name, price, description, and image', { ta
   });
 });
 
-test('Sort products by Price (Low to High) and verify order', { tag: ["@smoke","@regression","@P0","@sort-products-low-to-high"] }, async ({ page, loginPage, productListPage, sortingPage }) => {
+test('Sort products by Price (Low to High) and verify order', { tag: ["@smoke", "@regression", "@P0", "@sort-products-low-to-high"] }, async ({ page, loginPage, productListPage, sortingPage }) => {
   await test.step('Open — Navigate to Sauce Demo login page', async () => {
     await page.goto('/');
   });
@@ -60,14 +60,14 @@ test('Sort products by Price (Low to High) and verify order', { tag: ["@smoke","
     await loginPage.clickLoginButton();
   });
   await test.step('Select — Select \'Price (low to high)\' from sort dropdown', async () => {
-    await productListPage.selectNameAToZ2('lohi');
+    await productListPage.selectNameAToZ('Price (low to high)');
   });
   await test.step('Assert text — Verify first product is lowest price', async () => {
     await sortingPage.expectAddToCartSauceLabsOnesieText('$7.99');
   });
 });
 
-test('Add product to cart and verify cart icon updates', { tag: ["@smoke","@regression","@P0","@add-to-cart-and-verify-cart-count"] }, async ({ page, loginPage, productListPage, cartPage }) => {
+test('Add product to cart and verify cart icon updates', { tag: ["@smoke", "@regression", "@P0", "@add-to-cart-and-verify-cart-count"] }, async ({ page, loginPage, productListPage, cartPage }) => {
   await test.step('Open — Navigate to Sauce Demo login page', async () => {
     await page.goto('/');
   });
@@ -88,7 +88,7 @@ test('Add product to cart and verify cart icon updates', { tag: ["@smoke","@regr
   });
 });
 
-test('Navigate to product detail and back to product listing', { tag: ["@smoke","@regression","@P0","@product-detail-navigation"] }, async ({ page, loginPage, productListPage, productDetailPage }) => {
+test('Navigate to product detail and back to product listing', { tag: ["@smoke", "@regression", "@P0", "@product-detail-navigation"] }, async ({ page, loginPage, productListPage, productDetailPage }) => {
   await test.step('Open — Navigate to Sauce Demo login page', async () => {
     await page.goto('/');
   });

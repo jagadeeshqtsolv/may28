@@ -1,4 +1,4 @@
-# jaga — Playwright web framework
+# Sauce Demo - E2E - Automation — Playwright web framework
 
 Generated and maintained by Automation AI.
 
