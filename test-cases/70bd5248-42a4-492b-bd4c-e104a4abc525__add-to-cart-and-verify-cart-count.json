@@ -1,0 +1,60 @@
+{
+  "id": "add-to-cart-and-verify-cart-count",
+  "testPlanId": "70bd5248-42a4-492b-bd4c-e104a4abc525",
+  "requirementId": "95189b32-dab8-4545-8dbf-ce2e26c011c0",
+  "suiteName": "sauce-demo-product-listing-smoke",
+  "case": {
+    "id": "add-to-cart-and-verify-cart-count",
+    "title": "Add product to cart and verify cart icon updates",
+    "priority": "P0",
+    "platforms": [
+      "chrome"
+    ],
+    "preconditions": [],
+    "steps": [
+      {
+        "id": "step1",
+        "action": "openUrl",
+        "targetDescription": "Navigate to Sauce Demo login page",
+        "value": "https://www.saucedemo.com/"
+      },
+      {
+        "id": "step2",
+        "action": "fill",
+        "targetDescription": "Enter username",
+        "locatorHint": "[data-test='username']",
+        "value": "standard_user"
+      },
+      {
+        "id": "step3",
+        "action": "fill",
+        "targetDescription": "Enter password",
+        "locatorHint": "[data-test='password']",
+        "value": "secret_sauce"
+      },
+      {
+        "id": "step4",
+        "action": "tap",
+        "targetDescription": "Click Login button",
+        "locatorHint": "[data-test='login-button']"
+      },
+      {
+        "id": "step5",
+        "action": "tap",
+        "targetDescription": "Click Add to Cart for Sauce Labs Backpack",
+        "locatorHint": "[data-test='add-to-cart-sauce-labs-backpack']"
+      },
+      {
+        "id": "step6",
+        "action": "assertText",
+        "targetDescription": "Verify cart icon shows 1 item",
+        "locatorHint": ".shopping_cart_badge",
+        "assertion": "1"
+      }
+    ],
+    "tags": [
+      "@smoke",
+      "@regression"
+    ]
+  }
+}
